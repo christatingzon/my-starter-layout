@@ -1,11 +1,14 @@
+doctype html
 html  
   head
-    title This is my first Pug file s
+    meta(charset='utf-8')
+    title My Starter Layout
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel="stylesheet" href="css/index.css")
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
   body
-    header
-      p My soon to be menu
-    section
-      p This is a post about Pug template engine, enjoy it!
-      p try
-    footer
-      cool footer with lots of copyrights same
+    script(src='js/scripts.js')
