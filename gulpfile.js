@@ -1,12 +1,12 @@
 // ------------------------------------------------------------------------------------ //
 var dest = 'dest/';
 var src = 'src/';
-var sassProd = false;
 
 var pugSrc = src + 'templates/*.pug',
-    scssSrc = src + 'sass/*.scss',
-    scssDst = dest + 'css/';
-
+    scssSrc = src + 'sass/**/*.scss',
+    scssDst = dest + 'css/',
+    jsVendorSrc = src + 'vendor/**/*.js',
+    jsVendorDst = dest + 'js/';
 
 
 // ------------------------------------------------------------------------------------ //
@@ -16,14 +16,40 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    browserSync = require('browser-sync').create(),
+    sourcemaps = require('gulp-sourcemaps'),
+    concat = require('gulp-concat');
 
+
+// ------------------------------------------------------------------------------------ //
+// SETUPS
 
 
 // ------------------------------------------------------------------------------------ //
 // TASKS
 gulp.task('prod', ['default','styles:prod', 'watch:prod']);
-gulp.task('default', ['pug', 'styles', 'watch']);
+gulp.task('default', ['pug', 'styles', 'scripts', 'watch']);
+
+/* Comment out Live Reload for the meantime */
+//gulp.task('default', ['styles', 'watch'], function(){
+//  
+//  browserSync.init({
+//      server: {
+//          baseDir: "./"
+//      }
+//  });
+//  gulp.watch(src + '**/*.scss', ['changes-watch']);
+//  gulp.watch('**/*.html', function(done) {
+//    browserSync.reload();
+//    //done();
+//  });
+//});
+
+//gulp.task('changes-watch', ['styles'], function (done) {
+//  browserSync.reload();
+//  done();
+//});
 
 
 // --------------------------------------------------------------
@@ -44,16 +70,19 @@ gulp.task('pug', function() {
 
 gulp.task('styles', function(){
   return gulp.src(scssSrc)
+      .pipe(sourcemaps.init())
       .pipe(sass().on('error', function (err) { console.log(err.message); }))
+      .pipe(sourcemaps.write())
       .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
       .pipe(gulp.dest(scssDst))
       .pipe(notify({ message: 'Style task complete' }));
 });
 
 gulp.task('styles:prod', function(){
-  sassProd = true;
   return gulp.src(scssSrc)
+      .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'compressed'}).on('error', function (err) { console.log(err.message); }))
+      .pipe(sourcemaps.write())
       .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
       .pipe(rename({suffix: '.min'}))
       .pipe(gulp.dest(scssDst))
@@ -62,13 +91,40 @@ gulp.task('styles:prod', function(){
 
 
 // --------------------------------------------------------------
+// JAVASCRIPT
+
+gulp.task('scripts', function(){
+  return gulp.src(jsVendorSrc)
+      .pipe(sourcemaps.init())
+      .pipe(concat('vendor.js'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest(jsVendorDst))
+      .pipe(notify({ message: 'JS Concatenation task complete' }));
+});
+
+/*gulp.task('styles:prod', function(){
+  return gulp.src(scssSrc)
+      .pipe(sourcemaps.init())
+      .pipe(sass({outputStyle: 'compressed'}).on('error', function (err) { console.log(err.message); }))
+      .pipe(sourcemaps.write())
+      .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest(scssDst))
+      .pipe(notify({ message: 'Styles and Minify task complete' }));
+});*/
+
+// --------------------------------------------------------------
 // WATCH
 
-gulp.task('watch', function(){
+gulp.task('watch', function(done){
   gulp.watch(src + 'templates/*', ['pug']);
-  gulp.watch(src + 'sass/*', ['styles']);
+  gulp.watch(scssSrc, ['styles']);
+  gulp.watch(jsVendorSrc, ['js']);
+
+  //browserSync.reload();
+  //done();
 });
 
 gulp.task('watch:prod', function(){
-  gulp.watch(src + 'sass/*', ['styles:prod']);
+  gulp.watch(scssSrc, ['styles:prod']);
 });
