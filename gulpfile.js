@@ -119,7 +119,7 @@ gulp.task('scripts', function(){
 gulp.task('watch', function(done){
   gulp.watch(src + 'templates/*', ['pug']);
   gulp.watch(scssSrc, ['styles']);
-  gulp.watch(jsVendorSrc, ['js']);
+  gulp.watch(jsVendorSrc, ['scripts']);
 
   //browserSync.reload();
   //done();
