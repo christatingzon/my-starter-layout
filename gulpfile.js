@@ -7,7 +7,9 @@ var pugSrc = src + 'templates/*.pug',
     scssDst = dest + 'css/',
     vendorSrc = src + 'vendor/',
     jsVendorSrc = src + 'vendor/**/*.js',
-    jsVendorDst = dest + 'js/';
+    jsVendorDst = dest + 'js/',
+    imgSrc = src + 'fixtures/*',
+    imgDst = dest + 'images/';
 
 
 // ------------------------------------------------------------------------------------ //
@@ -23,7 +25,9 @@ var fs = require('fs'), //file system
     sourcemaps = require('gulp-sourcemaps'),
     concat = require('gulp-concat'),
     emptyDir = require('empty-dir'),
-    del = require('del');
+    del = require('del'),
+    image = require('gulp-image'),
+    changed = require('gulp-changed');
 
 
 // ------------------------------------------------------------------------------------ //
@@ -32,8 +36,8 @@ var fs = require('fs'), //file system
 
 // ------------------------------------------------------------------------------------ //
 // TASKS
+gulp.task('default', ['pug', 'styles', 'scripts', 'images', 'watch']);
 gulp.task('prod', ['default','styles:prod', 'watch:prod']);
-gulp.task('default', ['pug', 'styles', 'scripts', 'watch']);
 
 /* Comment out Live Reload for the meantime */
 //gulp.task('default', ['styles', 'watch'], function(){
@@ -119,9 +123,8 @@ gulp.task('scripts', function(){
         .pipe(concat('vendor.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(jsVendorDst))
-        .pipe(notify({ message: 'JS Concatenation task complete' }));
+        .pipe(notify({ message: 'Script Concatenation task complete' }));
   }
-
 });
 
 /*gulp.task('styles:prod', function(){
@@ -135,13 +138,27 @@ gulp.task('scripts', function(){
       .pipe(notify({ message: 'Styles and Minify task complete' }));
 });*/
 
+
+// --------------------------------------------------------------
+// IMAGES
+
+gulp.task('images', function() {
+  return gulp.src(imgSrc)
+      .pipe(changed(imgDst))
+      .pipe(image())
+      .pipe(gulp.dest(imgDst))
+      .pipe(notify({ message: 'Image Optimization task complete' }));
+});
+
+
 // --------------------------------------------------------------
 // WATCH
 
 gulp.task('watch', function(done){
-  gulp.watch(src + 'templates/*', ['pug']);
+  gulp.watch(pugSrc, ['pug']);
   gulp.watch(scssSrc, ['styles']);
   gulp.watch([jsVendorSrc, vendorSrc + '*' ], {cwd: './'}, ['scripts']);
+  gulp.watch(imgSrc, {cwd: './'}, ['images']);
 
   //browserSync.reload();
   //done();
