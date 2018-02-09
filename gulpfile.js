@@ -106,6 +106,7 @@ gulp.task('scripts', function(){
   var result = emptyDir.sync(vendorSrc);
 
   if (result){
+    fs.writeFile(vendorSrc +'.gitignore', '*\r\n!.gitignore', (error) => { /* handle error */ });
     fs.writeFile(vendorSrc +'_temp.txt', 'dev purpose', (error) => { /* handle error */ });
     return del(jsVendorDst + 'vendor.js');
   } else {
