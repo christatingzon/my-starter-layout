@@ -98,15 +98,22 @@ gulp.task('styles:prod', function(){
 // JAVASCRIPT
 
 gulp.task('scripts', function(){
-  
   emptyDir(vendorSrc, function (err, result) {/**/ });
   var result = emptyDir.sync(vendorSrc);
-  console.log('Directory is empty:', result);
 
   if (result){
-    fs.writeFile(vendorSrc +'temp.txt', 'dev purpose', (error) => { /* handle error */ });
+    fs.writeFile(vendorSrc +'_temp.txt', 'dev purpose', (error) => { /* handle error */ });
     return del(jsVendorDst + 'vendor.js');
   } else {
+    
+    fs.readdir(vendorSrc, (err, files) => {
+      var countFile = files.length;
+      if(countFile > 1){
+        fs.unlink(vendorSrc +'_temp.txt', function (err) {});
+      }
+    });
+
+
     return gulp.src(jsVendorSrc, {cwd: './'})
         .pipe(sourcemaps.init())
         .pipe(concat('vendor.js'))
