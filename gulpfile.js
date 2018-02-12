@@ -8,6 +8,8 @@ var pugSrc = src + 'templates/*.pug',
     vendorSrc = src + 'vendor/',
     jsVendorSrc = src + 'vendor/**/*.js',
     jsVendorDst = dest + 'js/',
+    cssVendorSrc = src + 'vendor/**/*.css',
+    cssVendorDst = dest + 'css/',
     imgSrc = src + 'fixtures/*',
     imgDst = dest + 'images/';
 
@@ -36,7 +38,7 @@ var fs = require('fs'), //file system
 
 // ------------------------------------------------------------------------------------ //
 // TASKS
-gulp.task('default', ['pug', 'styles', 'scripts', 'images', 'watch']);
+gulp.task('default', ['pug', 'styles', 'styles:vendor', 'scripts', 'images', 'watch']);
 gulp.task('prod', ['default','styles:prod', 'watch:prod']);
 
 /* Comment out Live Reload for the meantime */
@@ -97,6 +99,15 @@ gulp.task('styles:prod', function(){
       .pipe(notify({ message: 'Styles and Minify task complete' }));
 });
 
+gulp.task('styles:vendor', function(){
+  return gulp.src(cssVendorSrc, {cwd: './'})
+      .pipe(sourcemaps.init())
+      .pipe(concat('vendor.css'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest(cssVendorDst))
+      .pipe(notify({ message: 'Styles Vendor Concatenation task complete' }));
+});
+
 
 // --------------------------------------------------------------
 // JAVASCRIPT
@@ -124,7 +135,7 @@ gulp.task('scripts', function(){
         .pipe(concat('vendor.js'))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(jsVendorDst))
-        .pipe(notify({ message: 'Script Concatenation task complete' }));
+        .pipe(notify({ message: 'Script Vendor Concatenation task complete' }));
   }
 });
 
@@ -159,6 +170,7 @@ gulp.task('watch', function(done){
   gulp.watch(pugSrc, ['pug']);
   gulp.watch(scssSrc, ['styles']);
   gulp.watch([jsVendorSrc, vendorSrc + '*' ], {cwd: './'}, ['scripts']);
+  gulp.watch(cssVendorSrc, {cwd: './'}, ['styles:vendor']);
   gulp.watch(imgSrc, {cwd: './'}, ['images']);
 
   //browserSync.reload();
