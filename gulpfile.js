@@ -29,7 +29,8 @@ var fs = require('fs'), //file system
     emptyDir = require('empty-dir'),
     del = require('del'),
     image = require('gulp-image'),
-    changed = require('gulp-changed');
+    changed = require('gulp-changed'),
+    stripCssComments = require('gulp-strip-css-comments');
 
 
 // ------------------------------------------------------------------------------------ //
@@ -81,19 +82,18 @@ gulp.task('pug', function() {
 gulp.task('styles', function(){
   return gulp.src(scssSrc)
       .pipe(sourcemaps.init())
-      .pipe(sass().on('error', function (err) { console.log(err.message); }))
-      .pipe(sourcemaps.write())
+      .pipe(sass({outputStyle: 'nested'}).on('error', function (err) { console.log(err.message); }))
       .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+      .pipe(sourcemaps.write())
       .pipe(gulp.dest(scssDst))
       .pipe(notify({ message: 'Style task complete' }));
 });
 
 gulp.task('styles:prod', function(){
   return gulp.src(scssSrc)
-      .pipe(sourcemaps.init())
       .pipe(sass({outputStyle: 'compressed'}).on('error', function (err) { console.log(err.message); }))
-      .pipe(sourcemaps.write())
       .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+      .pipe(stripCssComments({preserve:false}))
       .pipe(rename({suffix: '.min'}))
       .pipe(gulp.dest(scssDst))
       .pipe(notify({ message: 'Styles and Minify task complete' }));
