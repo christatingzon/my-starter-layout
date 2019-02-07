@@ -1,31 +1,31 @@
 {
   "name": "my-starter-layout",
   "version": "1.0.0",
-  "description": "Something for me",
-  "private": true,
+  "description": "Ein's boilerplate",
   "main": "index.js",
-  "dependencies": {
-    "hoek": "^5.0.3"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "del": "^3.0.0",
-    "empty-dir": "^1.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-changed": "^3.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-image": "^4.3.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-pug": "^4.0.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-strip-css-comments": "^2.0.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christatingzon/my-starter-layout.git"
+  },
   "author": "Ein Thought",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christatingzon/my-starter-layout/issues"
+  },
+  "homepage": "https://github.com/christatingzon/my-starter-layout#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.4.7",
+    "cssnano": "^4.1.8",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4"
+  }
 }
