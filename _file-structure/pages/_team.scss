@@ -1,0 +1,40 @@
+.team-page {
+  padding-top: 165px;
+
+  .team-members-container {
+    .team-member {
+      .team-img {
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+      .team-info {
+        p {
+          &:nth-child(2), &:nth-child(3){
+            color: #9b9b9b;
+          }
+        }
+      }
+      p {
+        line-height: 1rem;
+        letter-spacing: normal;
+
+        &:last-child {
+          margin-top: 1.6rem;
+          line-height: 1.3rem;
+        }
+      }
+    }
+
+    @include mq(min-md) {
+      .team-info {
+        p {
+          &:nth-child(2), &:nth-child(3){
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

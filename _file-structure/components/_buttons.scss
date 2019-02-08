@@ -1,0 +1,118 @@
+.link-whitebt {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 2px 1rem;
+  line-height: 1.6rem;
+  text-align: center;
+  border-radius: 3px;
+  @include mq(min-md) {
+    padding: 6px 1rem;
+  }
+  &:hover {
+    opacity: 0.89;
+  }
+}
+
+.btn-pink {
+  background-color: $vividPink;
+  color: #fff;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: normal;
+  line-height: 1.6rem;
+  font-size: 0.875rem;
+  padding: 0.875rem 2rem;
+  min-width: 170px;
+  font-family: $normal_text;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: darken( $vividPink, 8% );
+  }
+  @include mq(min-md) {
+    padding: 0.875rem 2.5rem;
+  }
+}
+
+
+.btn-green {
+  @extend .btn-pink;
+  background-color: $green;
+  border: 0 none;
+  &:hover {
+    background-color: darken( $green, 8% );
+  }
+}
+
+.link-profile {
+  color: #fff;
+  img {
+    width: 22px;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+  }
+  span {
+    max-width: 160px;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+.link-logout {
+  color: #fff;
+  font-size: 0.9375rem;
+  img {
+    width: 0.875rem;
+    margin-right: 0.1875rem;
+  }
+}
+
+
+// tooltip style
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+[data-tooltip]:before {
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -29px;
+  padding: 7px;
+  width: 58px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: rgba(51,51,51,0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.2;
+}
+[data-tooltip]:after {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border: 5px solid transparent;;
+  border-bottom-color: rgba(51,51,51,0.9);
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+.show-tooltip:before, .show-tooltip:after {
+  visibility: visible;
+  opacity: 1;
+}

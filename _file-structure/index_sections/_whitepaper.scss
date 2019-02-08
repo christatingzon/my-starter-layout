@@ -1,0 +1,59 @@
+.whitepaper {
+  background-color: $icoPink;
+  color: white;
+  padding: 3rem 1.6rem 5rem 1.6rem;
+  @include pink-gradient;
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  p {
+    opacity: .8;
+    text-align: center;
+  }
+  .buttons {
+    margin-top: 3rem;
+    a:first-child {
+      margin-bottom: .5rem;
+    }
+  }
+  .btn-container {
+    .btn-white {
+      margin: auto !important;
+      text-align: center !important;
+      display: block !important;
+    }
+  }
+  @include mq(min-md) {
+    padding: 6rem 7.5% 7rem 7.5%;
+    h2 {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    p {
+      text-align: left;
+    }
+    .btn-container {
+      .btn-white {
+        margin: 0 !important;
+        display: inline-block !important;
+      }
+    }
+    .container  {
+      display: flex;
+      .copy, .buttons {
+        flex: 0 1 50%;
+      }
+      .buttons {
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .copy {
+        max-width: 500px;
+        padding-right: 2rem;
+      }
+    }
+  }
+}

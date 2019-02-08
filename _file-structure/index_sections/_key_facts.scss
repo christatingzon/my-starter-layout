@@ -1,0 +1,39 @@
+.key-facts {
+  background-color: #fff;
+  .key-facts-container {
+    display: flex;
+    flex-wrap: wrap;
+    .key-info {
+      flex: 1 0 100%;
+      text-align: center;
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+      p {
+        margin: 0;
+        &:first-of-type {
+          font-size: 38px;
+          font-stretch: normal;
+          line-height: normal;
+          color: $dark;
+          font-family: $bold_text;
+        }
+        &:last-of-type {
+          color: $darkSilver;
+          line-height: 1.75;
+          letter-spacing: 0.3px;
+          font-family: $med_text;
+        }
+      }
+    }
+
+    @include mq(min-md) {
+      .key-info {
+        flex-basis: 25%;
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

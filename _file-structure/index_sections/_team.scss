@@ -1,0 +1,211 @@
+.team {
+  background-color: $grayBg;
+  text-align: center;
+
+  .member {
+    margin: 1rem 0 5rem;
+    a {
+      color: $dark;
+    }
+  }
+  .member-copy {
+    .bold {
+      font-family: $bold_text;
+    }
+    p {
+      margin-top: 1.6rem;
+      margin-bottom: .5rem;
+      font-size: 1.125rem;
+    }
+    .bio {
+      color: $darkSilver;
+      text-align: left;
+      margin: auto;
+      max-width: 235px;
+      font-size: .875rem;
+    }
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    width: 190px;
+    margin: 0 auto .4rem auto !important;
+    color: #9f9f9f;
+    p {
+      margin: 0;
+      font-size: 1rem;
+      flex-grow: 1;
+      //font-family: $med_text;
+    }
+  }
+  .works {
+    font-family: $normal_italic;
+    color: #9F9F9F;
+    line-height: normal;
+    margin: 0 auto 1.6rem;
+    font-size: 1rem;
+    width: 190px;
+  }
+  .extended-team-link {
+    font-family: $bold_text;
+    color: $darkSilver;
+    transition: all .2s ease-out;
+    &:hover {
+      border-bottom: 2px solid $darkSilver;
+    }
+  }
+  @include mq(min-md) {
+    .extended-team-link {
+      font-family: $bold_text;
+      float: right;
+    }
+    .container {
+      display:flex;
+      flex-wrap: wrap;
+      width: 100%;
+      .member {
+        padding: 1.6rem;
+        flex: 0 1 50%;
+      }
+    }
+  }
+  @include mq(min-lg) {
+    .container {
+      display:flex;
+      .member {
+        padding: 1.6rem;
+        flex: 0 1 25%;
+      }
+    }
+  }
+}
+@include mq(min-md) {
+  .team {
+    padding: 8rem 1rem 0rem;
+  }
+}
+
+
+.advisors {
+  background-color: $grayBg;
+  text-align: center;
+  .member {
+    margin: 1rem auto 5rem auto;
+    a {
+      color: $dark;
+    }
+  }
+  .advisor-copy {
+    .bold {
+      font-family: $bold_text;
+    }
+    p {
+      margin-top: 1.6rem;
+      margin-bottom: .5rem;
+      font-size: 1.125rem
+    }
+    .company-linkedin {
+      position: relative;
+    }
+    .bio {
+      color: $darkSilver;
+      text-align: left;
+      margin: auto;
+      max-width: 220px;
+      font-size: .875rem;
+    }
+  }
+  .title {
+    width: 190px;
+    margin: 0 auto 1.6rem auto;
+    color: #9f9f9f;
+    p {
+      margin: 0;
+      position: relative;
+      display: inline-block;
+    }
+    .company {
+      &::after {
+        content: "";
+        position: absolute;
+        right:-26px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        background: url(image-path('icons/linkedin_icon.svg'));
+      }
+    }
+  }
+  @include mq(min-md) {
+    .container {
+      display:flex;
+      // justify-content: space-between;
+      flex-wrap: wrap;
+      // width: 100%;
+      .member {
+        padding: 1.6rem;
+        flex: 0 0 50%;
+        margin: 0 0 4rem 0;
+      }
+    }
+  }
+  @include mq(min-lg) {
+    .container {
+      display:flex;
+      .member {
+        padding: 1.6rem;
+        flex: 0 0 25%;
+        margin: 0 0 4rem 0;
+      }
+    }
+  }
+}
+
+.inner-page {
+  .team {
+    background-color: #fff;
+    a {
+      letter-spacing: normal !important;
+    }
+    .title {
+      margin: 0 auto .6rem auto;
+      margin: auto;
+      p {
+        flex-grow: 1;
+      }
+    }
+    .member-copy {
+      .bold {
+      }
+      .bio {
+        color: #919191;
+        line-height: 1.6;
+      }
+
+    }
+    @include mq(min-md) {
+      .section-title {
+        margin: 3rem auto;
+        font-size: 2.75rem;
+      }
+    }
+  }
+}
+
+.extended-team {
+  .section-title {
+    margin-top: 4rem;
+  }
+  .member {
+    a {
+      color: $dark;
+    }
+  }
+  .works {
+  display:none;
+  visibility: hidden;
+  }
+  .main {
+    height: 100px;
+  }
+}

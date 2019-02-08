@@ -1,0 +1,35 @@
+@import 'vendors/normalize';
+@import 'vendors/slick';
+@import 'vendors/intlTelInput';
+
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/mixins';
+
+@import 'components/typography';
+@import 'components/buttons';
+@import 'components/navigation';
+@import 'components/layout';
+@import 'components/animation';
+
+@import 'index_components/header';
+@import 'index_components/footer';
+@import 'index_components/mobile_nav';
+
+@import 'index_sections/key_facts';
+@import 'index_sections/token_sale';
+@import 'index_sections/problems';
+@import 'index_sections/solution';
+@import 'index_sections/lvn_token';
+@import 'index_sections/tech_stack';
+@import 'index_sections/testimonial_partners';
+@import 'index_sections/timeline';
+@import 'index_sections/team';
+@import 'index_sections/partners';
+@import 'index_sections/whitepaper';
+@import 'index_sections/press';
+@import 'index_sections/try_liven';
+
+@import 'pages/team.scss';
+@import 'pages/privacy.scss';
+@import 'pages/terms.scss';

@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Circular Book';
+    src: url('../fonts/Circular-Book.eot');
+    src: url('../fonts/Circular-Book.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Circular-Book.woff2') format('woff2'),
+        url('../fonts/Circular-Book.woff') format('woff'),
+        url('../fonts/Circular-Book.ttf') format('truetype'),
+        url('../fonts/Circular-Book.svg#Circular-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circular Book Italic';
+    src: url('../fonts/Circular-BookItalic.eot');
+    src: url('../fonts/Circular-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Circular-BookItalic.woff2') format('woff2'),
+        url('../fonts/Circular-BookItalic.woff') format('woff'),
+        url('../fonts/Circular-BookItalic.ttf') format('truetype'),
+        url('../fonts/Circular-BookItalic.svg#Circular-BookItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circular Medium';
+    src: url('../fonts/Circular-Medium.eot');
+    src: url('../fonts/Circular-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Circular-Medium.woff2') format('woff2'),
+        url('../fonts/Circular-Medium.woff') format('woff'),
+        url('../fonts/Circular-Medium.ttf') format('truetype'),
+        url('../fonts/Circular-Medium.svg#Circular-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circular Medium Italic';
+    src: url('../fonts/Circular-MediumItalic.eot');
+    src: url('../fonts/Circular-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Circular-MediumItalic.woff2') format('woff2'),
+        url('../fonts/Circular-MediumItalic.woff') format('woff'),
+        url('../fonts/Circular-MediumItalic.ttf') format('truetype'),
+        url('../fonts/Circular-MediumItalic.svg#Circular-MediumItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Circular Bold';
+    src: url('../fonts/Circular-Bold.eot');
+    src: url('../fonts/Circular-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Circular-Bold.woff2') format('woff2'),
+        url('../fonts/Circular-Bold.woff') format('woff'),
+        url('../fonts/Circular-Bold.ttf') format('truetype'),
+        url('../fonts/Circular-Bold.svg#Circular-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+  text-align: center;
+  margin: 0;
+  padding: .2em 0 0 0;
+	font-weight: 400;
+}
+
+h1 {
+	text-align: left;
+	color: white;
+	line-height: 2.1rem;
+	margin-bottom: 2rem;
+	font-size: 2.3rem;
+}
+@include mq(min-md) {
+  h1 {
+      font-size: 2.7rem;
+      line-height: 3.2rem;
+  }
+}
+
+h2 {
+  line-height: 2.6rem;
+  font-weight: 600;
+  font-size: 28px;
+}
+@include mq(min-md) {
+  h2 {
+    line-height: 28px;
+    font-weight: 600;
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  line-height: 2.6rem;
+  font-size: 20px;
+  margin-bottom: 1.6rem;
+}
+@include mq(min-md) {
+	h3 {
+	  line-height: 2.6rem;
+	  font-size: 22px;
+	  margin-bottom: 1.6rem;
+	}
+}
+
+p {
+	margin-bottom: 1.6rem;
+	color:  #313131;
+	font-weight: 400;
+  line-height: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+small {
+	padding: .5rem;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+hr {
+	width: 90%;
+	border: 1px solid white;
+	opacity: .4;
+}
+
+.dark {
+  color: $dark;
+}
+
+
+//classes
+.small {
+	margin: .5rem 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+.bold {
+	font-weight: 600;
+	font-size: 17px;
+	text-transform: uppercase;
+}
+
+.big {
+	font-size: 250%;
+}
+
+.large {
+  font-family: $bold_text;
+  font-weight: bold;
+}
+
+.center {
+	text-align: center;
+}
+.underline {
+	border-bottom: 1px solid rgba(255,255,255, 1);
+}
+.line {
+	width: 50px;
+	height: 4px;
+	background-color: $icoPink;
+	display: block;
+	margin-bottom: 2rem;
+}
+.blue-text {
+  color: #45aeff;
+  @at-root a#{&}:hover {
+    opacity: 0.8;
+  }
+}
+.red-text {
+  color: #fd1515;
+  @at-root a#{&}:hover {
+    opacity: 0.8;
+  }
+}

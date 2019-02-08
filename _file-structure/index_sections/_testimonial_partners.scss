@@ -1,0 +1,149 @@
+.testimonial-video-partners {
+  .wrapper > div {
+    margin-bottom: 4rem;
+  }
+  .testimonial {
+    max-width: 850px;
+    margin: 0 auto;
+    .section-title {
+      max-width: 100%;
+      position: relative;
+      margin-top: 3rem;
+      span {
+        position: relative;
+        z-index: 1;
+      }
+      &:before, &:after {
+        content: "";
+        background-image: asset-data-url("icons/quotes.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 130px;
+        height: 130px;
+        display: block;
+        position: absolute;
+      }
+      &:before {
+        top: -85px;
+        left: -35px;
+      }
+      &:after {
+        bottom: -66px;
+        right: -20px;
+        transform: rotateZ(180deg);
+      }
+    }
+    p {
+      &:nth-of-type(2) {
+        font-family: $normal_italic;
+        color: $darkSilver;
+        // letter-spacing: 0.3px;
+        font-size: .875rem;
+        margin: 1rem 0;
+        position: relative;
+        text-align: center;
+      }
+    }
+    @include mq(min-md) {
+      .section-title {
+        margin: 6.25rem 0 0;
+        text-align: left;
+        &:before {
+          top: -75px;
+        }
+        &:after {
+        }
+      }
+      p {
+        &:nth-of-type(2) {
+          text-align: unset;
+        }
+      }
+    }
+    @include mq(min-lg) {
+      .section-title {
+        &:before, &:after {
+          width: 170px;
+          height: 170px;
+        }
+        &:before {
+          top: -105px;
+          left: -68px;
+        }
+        &:after {
+          bottom: -84px;
+          right: -68px;
+        }
+      }
+    }
+    @include mq(min-xl) {
+      .section-title {
+        &:before {
+          left: -130px;
+        }
+        &:after {
+          right: -100px;
+        }
+      }
+    }
+  }
+  .video-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.3);
+    iframe {
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+  }
+  .partners-container {
+    margin-bottom: 1rem !important;
+    p {
+      // letter-spacing: 0.3px;
+      font-size: .875rem;
+      text-align: center;
+      color: $darkSilver;
+      margin-bottom: 2rem
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      li {
+        flex: 0 0 50%;
+        text-align: center;
+        padding: 0.5rem;
+        margin-bottom: 2rem;
+        img {
+          max-width: 100px;
+          max-height: 50px;
+          width: auto;
+          height: auto;
+          margin: auto;
+        }
+      }
+    }
+    .smaller {
+      transform: scale(0.8);
+    }
+    @include mq(min-md) {
+      ul {
+        li {
+          flex-basis: 25%;
+        }
+      }
+    }
+  }
+  @include mq(min-md) {
+    .wrapper > div {
+      margin-bottom: 8rem;
+    }
+  }
+}

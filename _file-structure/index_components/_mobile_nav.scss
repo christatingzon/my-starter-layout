@@ -1,0 +1,86 @@
+#mobile-nav {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  padding: 1.6rem;
+  overflow: scroll;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all .3s ease-out;
+  #close {
+    opacity: .5;
+  }
+  .top {
+    height: 15%;
+    width: 100%;
+    position: relative;
+    img {
+      margin-left: auto;
+      display: block;
+      width: 25px;
+    }
+  }
+  .main-links {
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    li {
+      height: 70%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 4rem;
+      a {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: $dark;
+        transition: all .4s ease-out;
+        text-align: center;
+        &:hover {
+          color: $icoPink;
+        }
+      }
+      .btn-pink {
+        text-transform: capitalize;
+        color: white;
+      }
+    }
+  }
+}
+@media screen and (min-width: 736px) {
+  #mobile-nav {
+    width: 38%;
+    min-width: 350px;
+  }
+}
+#mobile-nav.mobile-nav-show {
+  opacity: 1;
+  transform: translateX(0%);
+  transition: all .3s ease-out;
+}
+////////overlay
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 9;
+    transiton: all .15s ease-out;
+}
+#overlay.show {
+  display: block;
+}

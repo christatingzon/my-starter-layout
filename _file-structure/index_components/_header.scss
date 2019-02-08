@@ -1,0 +1,220 @@
+header {
+  height: 637px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  .overlay {
+    background-image: linear-gradient(115deg, #000000, #3d3d3d 51%, #363636 56%, #1a1a1a 66%, rgba(0, 0, 0, 0.91));
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: block;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+  }
+  .video-wrapper {
+    pointer-events: none;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &.loading {
+      + .loading-img {
+        z-index: 1;
+      }
+    }
+  }
+
+  .loading-img {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    transition: z-index ease 0.3s;
+    background-image: asset-data-url('bg/waiting-video-img.png');
+    background-size: cover;
+    background-position: center;
+  }
+  #video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .content-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+  }
+  h1 {
+    font-size: 2.6rem;
+    text-align: center;
+    color: #fff;
+    line-height: 1.08;
+    // letter-spacing: 1px;
+    font-family: $bold_text;
+    padding-top: 150px;
+    margin: 0;
+  }
+  .play-btn {
+    display: inline-block;
+    margin: 2.125rem auto 0;
+    background: transparent;
+    border: 0 none;
+    cursor: pointer;
+    img {
+      width: 78px;
+    }
+    &:hover {
+      img {
+        transform: scale(1.2);
+        transition: all .2s ease-out;
+      }
+    }
+  }
+  .btn-pink {
+    width: 280px;
+    margin: 2.125rem auto 0;
+    display: block;
+  }
+  .app-badges {
+    position: absolute;
+    bottom: 1.5rem;
+    width: 100%;
+    text-align: center;
+    display: none;
+    visibility: hidden;
+    a:first-child {
+      margin-right: 0.8rem;
+    }
+    img {
+      width: 106px;
+    }
+  }
+  @include mq(min-md) {
+    .app-badges {
+      display: block;
+      visibility: visible;
+    }
+  }
+  @include mq(min-lg) {
+    height: 735px;
+    h1 {
+      font-size: 3.75rem;
+      padding-top: 190px;
+    }
+    .play-btn {
+      img {
+        width: 94px;
+      }
+    }
+    .app-badges {
+      padding-left: 5%;
+      text-align: left;
+      img {
+        width: 132px;
+      }
+    }
+  }
+}
+
+.video-overlay {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  .video-container {
+    height: 100%;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    padding: 20px;
+    cursor: pointer;
+    line-height: 1;
+    transform: translate(120%, -100%);
+    transition: all .3s;
+    img {
+      width: 24px;
+      opacity: 0.75;
+    }
+    &:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+}
+.video-open {
+  overflow: hidden;
+  .video-overlay {
+    display: block;
+    .close {
+      transform: translate(0);
+    }
+  }
+}
+
+.register-form {
+  width: 100%;
+  max-width: 350px;
+  margin: 2rem auto 0 auto;
+  padding: 0 1rem;
+  input {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 3px;
+  }
+  input[type="email"] {
+    padding: .8rem;
+    margin-bottom: .8rem;
+  }
+  input[type="submit"] {
+    padding: .8rem;
+    @include pink-gradient;
+    color: white;
+    text-transform: uppercase;
+  }
+  @include mq(min-md) {
+    max-width: 500px;
+    margin: 2rem auto 0 auto;
+    input {
+      display: inline-block;
+      width: unset;
+    }
+    input[type="email"] {
+      min-width: 275px;
+      text-align: left;
+      margin-right: .4rem;
+      padding: .8rem 1.3rem;
+    }
+    input[type="submit"] {
+      min-width: 150px;
+      text-align: center;
+      padding: .8rem;
+    }
+  }
+}

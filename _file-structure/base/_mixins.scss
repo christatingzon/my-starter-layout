@@ -1,0 +1,49 @@
+// Media Query
+@mixin mq($point) {
+  @if map-has-key($breakpoints, $point) {
+    @media screen and #{map-get($breakpoints, $point)} {
+      @content;
+    }
+  }
+  @else {
+    @media screen and #{$point} {
+      @content;
+    }
+  }
+}
+
+// Background
+@mixin background($image: none, $size: initial, $color: transparent, $position: center, $repeat: no-repeat) {
+  background-color: $color;
+  @if $image == 'none' {
+    background-image: $image;
+  } @else {
+    background-image: url($image);
+  }
+  background-position: $position;
+  background-repeat: $repeat;
+  background-size: $size;
+}
+
+// Sub Nav Icons
+@mixin subNavIcon($category, $className){
+  @if $category == 'nav-desktop' {
+    &.#{$className} {
+      &:before {
+        background-image: url('../images/nav-icons/nav-#{$className}-gray.svg');
+      }
+      &.active, &:hover {
+        &:before {
+          background-image: url('../images/nav-icons/nav-#{$className}-pink.svg');
+          background-size: contain;
+        }
+      }
+    }
+  } @else {
+    &.#{$className} {
+      &:before {
+        background-image: url('../images/nav-icons/nav-#{$className}-white.svg');
+      }
+    }
+  }
+}

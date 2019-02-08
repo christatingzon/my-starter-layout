@@ -1,0 +1,53 @@
+.try-liven {
+  // background-color: $grayBg;
+  border-top: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 6rem 1.25rem 8rem 1.25rem;
+  h2 {
+    margin-bottom: 1.6rem;
+  }
+  @include mq(min-md) {
+    padding: 14rem 1.25rem 16rem 1.25rem;
+  }
+}
+.text-me-the-app {
+  input[type='tel'] {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+  }
+  input[type='submit'] {
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 190px;
+    box-shadow: none;
+    text-transform: capitalize;
+    border: 1px solid $icoPink;
+  }
+  .intl-tel-input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  @include mq(min-md) {
+    margin: auto;
+    max-width: 550px;
+   form {
+     display: flex;
+     input[type='tel']{
+       min-width: 250px;
+       text-align: left;
+     }
+     input[type="submit"] {
+       margin-left: 1rem;
+     }
+   }
+   .intl-tel-input {
+     flex: 1 0 auto;
+     width: auto;
+     margin: 0;
+   }
+  }
+}

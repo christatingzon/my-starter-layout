@@ -1,0 +1,35 @@
+// Colors
+$icoPink: #F2166E;
+$lightPink: #FFF1F1;
+$lightPinkPara: #FFCFE2;
+$dark: #171744;
+$green: #0dd067;
+$red: #fd1515;
+$ponkan: #fda415;
+$vividPink: #ff0867;
+$darkText: #3b3e4a;
+$gray: #979797;
+$lightGray: #d8d8d8;
+$trolleyGrey: #818181;
+
+// fonts
+$bold_text: 'Circular Bold', sans-serif;
+$med_text: 'Circular Medium', sans-serif;
+$med_italic: 'Circular Medium Italic', sans-serif;
+$normal_text: 'Circular Book', sans-serif;
+$normal_italic: 'Circular Book Italic', sans-serif;
+
+
+// Media query variable
+$breakpoints: (
+  min-xs: "(min-width: 320px)",
+  min-sm: "(min-width: 576px)",
+  min-md: "(min-width: 768px)",
+  min-lg: "(min-width: 992px)",
+  min-xl: "(min-width: 1200px)",
+  max-xs: "(max-width: 319.98px)",
+  max-sm: "(max-width: 575.98px)",
+  max-md: "(max-width: 767.98px)",
+  max-lg: "(max-width: 991.98px)",
+  max-xl: "(max-width: 1199.98px)"
+);
