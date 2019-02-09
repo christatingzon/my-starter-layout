@@ -2,10 +2,12 @@
 
 // Load plugins
 const autoprefixer = require("autoprefixer");
+const browsersync = require("browser-sync").create();
 const concat = require('gulp-concat');
 const cssnano = require("cssnano");
 const del = require("del");
 const gulp = require("gulp");
+const htmlmin = require('gulp-htmlmin');
 const imagemin = require("gulp-imagemin");
 const newer = require("gulp-newer");
 const notify = require('gulp-notify');
@@ -19,22 +21,43 @@ const uglify = require('gulp-uglify');
 // Define paths
 const basePaths = {
   src: 'src/',
-  dest: 'dest/assets/'
+  dest: 'dest/'
 };
 const paths = {
   styles: {
     src: basePaths.src + 'sass/**/*.scss',
-    dest: basePaths.dest + 'css/',
+    dest: basePaths.dest + 'assets/css/',
   },
   scripts: {
     src: basePaths.src + 'scripts/**/*.js',
-    dest: basePaths.dest + 'js/'
+    dest: basePaths.dest + 'assets/js/'
   },
   images: {
     src: basePaths.src + 'fixtures/**/*',
-    dest: basePaths.dest + 'img/'
+    dest: basePaths.dest + 'assets/img/'
+  },
+  html: {
+    src: basePaths.src + 'templates/**/*.html',
+    dest: basePaths.dest
   }
 };
+
+// BrowserSync
+function browserSync(done) {
+  browsersync.init({
+    server: {
+      baseDir: basePaths.dest
+    },
+    port: 3000
+  });
+  done();
+}
+
+// BrowserSync Reload
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
 
 // Clean assets
 function clean() {
@@ -77,6 +100,7 @@ function css() {
     .pipe(rename({ suffix: ".min" }))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browsersync.stream())
     .pipe(notify({ message: 'Style task complete' }));}
 
 // Concat and Minify Scripts
@@ -87,18 +111,33 @@ function css() {
     .pipe(concat('main.min.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(browsersync.stream())
     .pipe(notify({ message: 'Script task complete' }));
 }
 
+// Minify HTML
+function html() {
+  return gulp.src(paths.html.src)
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeComments: true
+    }))
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(browsersync.stream())
+    .pipe(notify({ message: 'HTML minify task complete' }));
+}
+
 // Watch files
-function watch() {
-  gulp.watch(paths.styles.src, css);
+function watchFiles() {
+  gulp.watch(paths.styles.src, gulp.series(css, browserSyncReload));
   gulp.watch(paths.images.src, images);
-  gulp.watch(paths.scripts.src, scripts);
+  gulp.watch(paths.scripts.src, gulp.series(scripts, browserSyncReload));
+  gulp.watch(paths.html.src, gulp.series(html, browserSyncReload));
 }
 
 // define complex tasks
-const build = gulp.series(clean, gulp.parallel(css, images, scripts));
+const build = gulp.series(clean, gulp.parallel(css, images, scripts, html));
+const watch = gulp.parallel(watchFiles, browserSync);
 
 // export tasks
 exports.watch = watch;
