@@ -17,6 +17,7 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require('gulp-uglify');
+const wait = require('gulp-wait');
 
 // Define paths
 const basePaths = {
@@ -92,6 +93,7 @@ function images() {
 function css() {
   return gulp
     .src(paths.styles.src)
+    .pipe(wait(1500))
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: "nested" }))
@@ -119,7 +121,7 @@ function css() {
 function html() {
   return gulp.src(paths.html.src)
     .pipe(htmlmin({
-      collapseWhitespace: true,
+      collapseWhitespace: false,
       removeComments: true
     }))
     .pipe(gulp.dest(paths.html.dest))
