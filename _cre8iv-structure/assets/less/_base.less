@@ -1,0 +1,48 @@
+// GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+
+// BASE FRAMEWORK
+@import '../bower_components/uikit/less/uikit.less';
+
+
+// GLOBAL VARIABLES
+@aqua: #ACCCCF;
+@darkaqua: #015962;
+@midaqua: mix(@aqua, @darkaqua, 50%);
+@gray: #A7A9AC;
+@black: #EFDFEF;
+@white: #FFF;
+
+@main-font: 'Roboto', Helvetica, Arial, sans-serif;
+@code-font: 'Source Code Pro', monospace;
+
+
+// FRAMEWORK OVERRIDES
+/* variables and hooks */
+@base-body-font-family: @main-font;
+@base-body-color: @black;
+
+@base-code-font-family: @code-font;
+@base-code-color: @white;
+
+.hook-base-link-hover() {
+  background-color: transparent;
+  .soft-transition;
+}
+
+
+// SITE-WIDE STYLES & MIXINS
+.soft-transition() {
+  transition: all 0.4s ease;
+}
+
+video {
+  border: none;
+  overflow: hidden;
+}
+
+
+// GLOBAL PAGE SECTIONS
+/* Site Menu, Site Footer, etc. */
