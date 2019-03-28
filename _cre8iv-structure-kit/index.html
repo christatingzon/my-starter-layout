@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en-AU">
 <head>
@@ -6,37 +7,40 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
         
-    <title>My Page Title</title>
-    <meta name="description" content="page description goes here">
+    <title>Home</title>
+    <meta name="description" content="">
         
     <!-- OPENGRAPH META -->
     <meta property="og:url" content="https://mysite.com/mypage">
     <meta property="og:title" content="My Page Title">
-    <meta property="og:description" content="page description goes here">
+    <meta property="og:description" content="">
     <meta property="og:image" content="http://mysite.com/assets/logo.jpg">
         
     <!-- FAVICONS -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
         
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="assets/css/main.min.css">
+    <link rel="stylesheet" href="assets/css/home.css">
         
     <!-- SCRIPTS (document.readyState === "loading") -->
-    <script src="js/vendor/modernizr.min.js"></script>
 </head>
+
 <body>
     <!--[if IE]>
-        <p class="browserupgrade">
-          You are using an <strong>outdated</strong> browser. 
-          Please <a href="http://browsehappy.com/">upgrade your browser</a> 
-          to improve your experience and security.
-        </p>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
     <!-- site content here -->
-    <h1>Hello world!</h1>
+    <p>Hello world!</p>
 
     <!-- SCRIPTS (document.readyState === "complete") -->
-    <script src="assets/js/main.min.js"></script>
+    <script src="assets/js/home.min.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to site's ID. -->
+    <script>
+        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
 </body>
 </html>
