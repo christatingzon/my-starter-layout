@@ -9,6 +9,40 @@
 	],
 "creatorBuild": "29156",
 "files": {
+	"/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.gitignore",
+		"oF": 0
+		},
+	"/.gitmodules": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/.gitmodules",
+		"oF": 0
+		},
+	"/assets/css/error.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "/assets/css/error-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/assets/css/error.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/assets/css/error.css.map",
+		"oF": 0
+		},
 	"/assets/css/home.css": {
 		"aP": 1,
 		"bl": 0,
@@ -45,6 +79,36 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
+		},
+	"/assets/js/error.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/error.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/js/error.min.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/js/error.min.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"/assets/js/error.min.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/assets/js/error.min.js.map",
+		"oF": 0
 		},
 	"/assets/js/home.js": {
 		"bF": 0,
@@ -87,6 +151,23 @@
 		"mS": 1,
 		"oA": 1,
 		"oAP": "/assets/css/_base.css",
+		"oF": 0,
+		"oS": 1,
+		"rwU": 2,
+		"sI": 0,
+		"sU": 0
+		},
+	"/assets/less/error.less": {
+		"aP": 1,
+		"bl": 0,
+		"eJ": 0,
+		"ft": 1,
+		"ie": 0,
+		"iI": 0,
+		"ma": 1,
+		"mS": 1,
+		"oA": 0,
+		"oAP": "/assets/css/error.css",
 		"oF": 0,
 		"oS": 1,
 		"rwU": 2,
@@ -163,6 +244,17 @@
 		"oA": 0,
 		"oAP": "/assets/uikit/.npmignore",
 		"oF": 0
+		},
+	"/assets/uikit/build/.eslintrc.js": {
+		"bF": 0,
+		"ft": 64,
+		"ma": 1,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "/assets/uikit/build/.eslintrc.min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
 		},
 	"/assets/uikit/build/build.js": {
 		"bF": 0,
@@ -293,6 +385,14 @@
 		"rFN": 0,
 		"uCM": 0
 		},
+	"/assets/uikit/composer.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "/assets/uikit/composer-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"/assets/uikit/CONTRIBUTING.md": {
 		"cB": 0,
 		"cS": 0,
@@ -351,6 +451,14 @@
 		"oAP": "/assets/uikit/dist/css/uikit.min-min.css",
 		"oF": 0,
 		"oS": 3
+		},
+	"/assets/uikit/dist/js/components/.gitkeep": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/assets/uikit/dist/js/components/.gitkeep",
+		"oF": 0
 		},
 	"/assets/uikit/dist/js/uikit-icons.js": {
 		"bF": 0,
@@ -487,6 +595,16 @@
 		"miP": 0,
 		"oA": 1,
 		"oAP": "/assets/uikit/src/images/backgrounds/form-checkbox.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/assets/uikit/src/images/backgrounds/form-datalist.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 1,
+		"oAP": "/assets/uikit/src/images/backgrounds/form-datalist.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -1067,6 +1185,16 @@
 		"miP": 0,
 		"oA": 1,
 		"oAP": "/assets/uikit/src/images/icons/dribbble.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"/assets/uikit/src/images/icons/etsy.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 1,
+		"oAP": "/assets/uikit/src/images/icons/etsy.svg",
 		"oF": 0,
 		"opt": 0,
 		"plM": 3758088159,
@@ -3110,17 +3238,6 @@
 		"mi": 1,
 		"oA": 1,
 		"oAP": "/assets/uikit/src/js/util/style.min.js",
-		"oF": 0,
-		"sC": 3,
-		"tS": 0
-		},
-	"/assets/uikit/src/js/util/touch.js": {
-		"bF": 0,
-		"ft": 64,
-		"ma": 1,
-		"mi": 1,
-		"oA": 0,
-		"oAP": "/assets/uikit/src/js/util/touch.min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -7789,7 +7906,7 @@
 	"/assets/uikit/tests/images/animated.gif": {
 		"ft": 4194304,
 		"iS": 61560,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/animated.gif",
 		"oF": 0,
 		"opt": 0
@@ -7798,7 +7915,7 @@
 		"ft": 16384,
 		"iS": 205488,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/avatar.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7809,7 +7926,7 @@
 		"ft": 16384,
 		"iS": 588912,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/dark.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7830,7 +7947,7 @@
 		"ft": 16384,
 		"iS": 233573,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/light.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7841,7 +7958,7 @@
 		"ft": 16384,
 		"iS": 538769,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/photo.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7852,7 +7969,7 @@
 		"ft": 16384,
 		"iS": 1024984,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/photo2.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7863,7 +7980,7 @@
 		"ft": 16384,
 		"iS": 623545,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/photo3.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7874,7 +7991,7 @@
 		"ft": 16384,
 		"iS": 98778,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/size-h.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7885,7 +8002,7 @@
 		"ft": 16384,
 		"iS": 744213,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/size-v.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7896,7 +8013,7 @@
 		"ft": 16384,
 		"iS": 181960,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/size1.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7907,7 +8024,7 @@
 		"ft": 16384,
 		"iS": 61569,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/size2.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7918,7 +8035,7 @@
 		"ft": 16384,
 		"iS": 66552,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/slider1.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7929,7 +8046,7 @@
 		"ft": 16384,
 		"iS": 55781,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/slider2.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7940,7 +8057,7 @@
 		"ft": 16384,
 		"iS": 35762,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/slider3.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7951,7 +8068,7 @@
 		"ft": 16384,
 		"iS": 124915,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/slider4.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -7962,7 +8079,7 @@
 		"ft": 16384,
 		"iS": 129524,
 		"jF": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/assets/uikit/tests/images/slider5.jpg",
 		"oF": 0,
 		"oIPL": 0,
@@ -8391,12 +8508,28 @@
 		"oAP": "/design_docs/design_docs-sample.txt",
 		"oF": 0
 		},
+	"/error.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/error.html",
+		"oF": 0
+		},
 	"/index.html": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/index.html",
+		"oF": 0
+		},
+	"/kit/error.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/error.html",
 		"oF": 0
 		},
 	"/kit/index.kit": {
@@ -8407,12 +8540,28 @@
 		"oAP": "/index.html",
 		"oF": 0
 		},
-	"/kit/snippets/_head.kit": {
+	"/kit/snippets/footer.kit": {
 		"cB": 0,
 		"ft": 2048,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/_head.html",
+		"oAP": "/footer.html",
+		"oF": 0
+		},
+	"/kit/snippets/head.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/head.html",
+		"oF": 0
+		},
+	"/kit/snippets/site_menu.kit": {
+		"cB": 0,
+		"ft": 2048,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/site_menu.html",
 		"oF": 0
 		}
 	},
@@ -8422,7 +8571,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 575443488.90992498,
-	"displayValue": "angsana-temp",
+	"displayValue": "GSLiving",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-punDog",
 	"iconImageWasSetByUser": 0
@@ -9882,7 +10031,7 @@
 	"externalServerAddress": "http://localhost:8888",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
-	"jsCheckerReservedNamesString": "UIkit, module, define",
+	"jsCheckerReservedNamesString": "UIkit, module, define, Set",
 	"jsHintFlags2": {
 		"asi": {
 			"active": 0,
