@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;1,400&display=swap");
+/********************************
+* Base Styles 
+*********************************/
+/* reset by boostrap */
+body, html {
+  font-family: "Montserrat", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  color: #2f2f2f;
+  background-color: #242F3F;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
