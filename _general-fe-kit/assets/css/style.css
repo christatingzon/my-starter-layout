@@ -7,12 +7,7 @@ body, html {
   font-family: "Montserrat", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
-  color: #2f2f2f;
-  background-color: #242F3F;
-}
-
-html {
-  font-size: 62.5%;
+  color: #333;
 }
 
 img {

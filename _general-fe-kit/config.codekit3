@@ -35,27 +35,6 @@
 		"oF": 0,
 		"oS": 3
 		},
-	"/assets/css/style.css.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/assets/css/style.css.map",
-		"oF": 0
-		},
-	"/assets/images/main-bg.png": {
-		"ft": 32768,
-		"iS": 604584,
-		"oA": 1,
-		"oAP": "/assets/images/main-bg.png",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
-		"oT": 1,
-		"ou": "lpckwebp-none",
-		"q": 100,
-		"rq": 75
-		},
 	"/assets/js/all.min.js": {
 		"bF": 0,
 		"ft": 64,
@@ -88,14 +67,6 @@
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
-		},
-	"/assets/js/main.min.js.map": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/assets/js/main.min.js.map",
-		"oF": 0
 		},
 	"/assets/scss/style.scss": {
 		"aP": 1,
@@ -164,11 +135,6 @@
 "manualImportLinks": {
 	},
 "projectAttributes": {
-	"creationDate": 575443488.90992498,
-	"displayValue": "Prosperity Algorithm",
-	"displayValueWasSetByUser": 1,
-	"iconImageName": "brackets-payne",
-	"iconImageWasSetByUser": 1
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
