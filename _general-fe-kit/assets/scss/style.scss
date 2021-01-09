@@ -1,26 +1,37 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;1,400&display=swap');
 
-
-// Variables
+// VARIABLES
 
 //Breakpoints
-$size-sm:      "only screen and (min-width : 480px)";
-$size-med:     "only screen and (min-width : 768px)"; // is represented in the iPad's portrait view
-$size-lg:      "only screen and (min-width : 992px)"; // is represented in the iPad's landscape view
-$size-xlg:     "only screen and (min-width: 1200px)";
+$sm: 480px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
 
 // Typography
 $main-font: 'Montserrat', Helvetica, sans-serif;
 
+// Font weight
 $light: 300;
 $regular: 400;
 $semibold: 600;
 $bold: 700;
 $extrabold: 800;
 
+// Colors
 $white: #fff;
 $black: #000;
+
+
+// MIXINS
+@mixin fa-pseudo() {
+    display: none;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
 
 // PAGE SECTION STYLES
 
